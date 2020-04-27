@@ -1,4 +1,4 @@
-#0x00. Python - Hello, World
+# 0x00. Python - Hello, World
 * Why Python programming is awesome (dont forget to tweet today, with the hashtag #pythoniscool :))
 * Who created Python
 * Who is Guido van Rossum
