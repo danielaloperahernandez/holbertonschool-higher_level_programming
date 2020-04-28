@@ -9,6 +9,6 @@ else:
 if last > 5:
     print("{}{} is {} and is greater than 5".format(lt_m, number, last))
 elif last == 0:
-    print("{}{} is {} ans id 0". format(lt_m, number, last))
+    print("{}{} is {} ans id 0".format(lt_m, number, last))
 else:
     print("{}{} is {} ans is less than 6 and not 0".format(lt_m, number, last))
