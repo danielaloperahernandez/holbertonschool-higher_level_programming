@@ -32,7 +32,9 @@ int is_palindrome(listint_t **head)
 	listint_t *head2 = *head;
 	listint_t *aux = NULL;
 
-	if (*head == NULL || head == NULL)
+	if (head == NULL)
+		return (0);
+	if (*head == NULL)
 		return (1);
 	if (head2->next == NULL)
 		return (1);
