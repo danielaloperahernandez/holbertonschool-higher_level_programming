@@ -40,6 +40,8 @@ int is_palindrome(listint_t **head)
 		head2 = head2->next;
 	}
 	print_listint(aux);
+	if (head2->next == NULL)
+		return (1);
 	while (head2->next)
 	{
 		if (head2->n == aux->n)
