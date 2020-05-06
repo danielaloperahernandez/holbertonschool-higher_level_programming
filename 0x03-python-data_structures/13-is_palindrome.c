@@ -39,13 +39,10 @@ int is_palindrome(listint_t **head)
 	}
 	while (*head != NULL)
 	{
-		if ((*head)->n == aux->n)
-		{
-			*head = (*head)->next;
-			aux = aux->next;
-		}
-		else
+		if ((*head)->n != aux->n)
 			return (0);
+		*head = (*head)->next;
+		aux = aux->next;
 	}
 	return (1);
 }
