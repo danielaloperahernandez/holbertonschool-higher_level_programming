@@ -30,7 +30,7 @@ listint_t *add_nodeint(listint_t **head, const int n)
 int is_palindrome(listint_t **head)
 {
 	listint_t *head2 = *head;
-	/*listint_t *head3 = *head;*/
+	listint_t *head3 = *head;
 	listint_t *aux = NULL;
 	int value;
 
@@ -44,11 +44,11 @@ int is_palindrome(listint_t **head)
 		add_nodeint(&aux, value);
 		head2 = head2->next;
 	}
-	while (head2 != NULL)
+	while (head3 != NULL)
 	{
-		if (head2->n == aux->n)
+		if (head3->n == aux->n)
 		{
-			head2 = head2->next;
+			head3 = head3->next;
 			aux = aux->next;
 		}
 		else
