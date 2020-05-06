@@ -12,7 +12,7 @@ listint_t *add_nodeint(listint_t **head, const int n)
 {
 	listint_t *new;
 
-	if (*head == NULL || head == NULL)
+	if (head == NULL)
 		return (NULL);
 	new = malloc(sizeof(listint_t));
 	if (new == NULL)
@@ -30,7 +30,9 @@ listint_t *add_nodeint(listint_t **head, const int n)
 int is_palindrome(listint_t **head)
 {
 	listint_t *head2 = *head;
+	/*listint_t *head3 = *head;*/
 	listint_t *aux = NULL;
+	int value;
 
 	if (head == NULL)
 		return (0);
@@ -38,7 +40,8 @@ int is_palindrome(listint_t **head)
 		return (1);
 	while (head2 != NULL)
 	{
-		add_nodeint(&aux, head2->n);
+		value = head2->n;
+		add_nodeint(&aux, value);
 		head2 = head2->next;
 	}
 	while (head2 != NULL)
