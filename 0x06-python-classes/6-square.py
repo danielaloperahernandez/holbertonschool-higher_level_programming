@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 class Square:
     """Class Square that defines a square"""
-    def __init__(self, size=0, position=(0,0)):
+    def __init__(self, size=0, position=(0, 0)):
         self.size = size
         self.position = position
 
@@ -24,9 +24,12 @@ class Square:
 
     @position.setter
     def position(self, value):
-        if type(value) is not int:
+        if (type(value) is not tuple or
+            len(value) is not 2
+            or map(lambda i: type(i) is not int or i < 0, value) is True):
             raise TypeError("position must be a tuple of 2 positive integers")
-
+        else:
+            self.__position = value
 
     def area(self):
         return(self.__size**2)
@@ -35,5 +38,7 @@ class Square:
         if self.__size is 0:
             print()
         else:
+            print("\n" * self.__position[1], end="")
             for i in range(self.__size):
+                print(" "* self.__position[0], end="")
                 print("#" * self.__size)
