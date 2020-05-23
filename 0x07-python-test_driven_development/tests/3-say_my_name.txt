@@ -12,20 +12,20 @@ Checking for regular case
         My name is James Zichy
 
 Cheking for firstname argument only
-        >>> say_my_name("James") #doctest: +NORMALIZE_WHITESPACE
-        My name is James
+        >>> say_my_name("James")
+        My name is James 
 
 Cheking firstname is empty string
         >>> say_my_name("", "James")
         My name is  James
 
 Cheking lastname is empty string
-        >>> say_my_name("James", "") #doctest: +NORMALIZE_WHITESPACE
-        My name is James
+        >>> say_my_name("James", "")
+        My name is James 
 
 Cheking both empty strings
-        >>> say_my_name("  ", "  ") #doctest: +NORMALIZE_WHITESPACE
-        My name is
+        >>> say_my_name("  ", "  ")
+        My name is      
 
 Checking for one argument is number
         >>> say_my_name(67, "Zichy")
