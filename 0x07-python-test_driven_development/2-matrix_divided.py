@@ -35,10 +35,13 @@ def matrix_divided(matrix, div):
         if size is None:
             size = len(row)
         elif size != len(row):
-            raise TypeError("each row of the matrix must have the same size")
+            raise TypeError("Each row of the matrix must have the same size")
         for elem in row:
             if type(elem) not in (float, int):
-                raise TypeError(
-                    "matrix must be a matrix (list of lists) " +
-                    "of integers/floats")
+                raise TypeError("matrix must be a matrix (list of lists) " +
+                                "of integers/floats")
     return [[round(elem / div, 2) for elem in row] for row in matrix]
+
+if __name__ == "__main__":
+    import doctest
+    doctest.testfile("tests/2-matrix_divided.txt")

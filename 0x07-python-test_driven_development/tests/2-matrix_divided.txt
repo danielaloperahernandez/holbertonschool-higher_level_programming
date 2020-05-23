@@ -123,7 +123,7 @@ Checking rows with differente size
         >>> matrix_divided(matrix, 5)
         Traceback (most recent call last):
         ...
-        TypeError: each row of the matrix must have the same size
+        TypeError: Each row of the matrix must have the same size
 
 Checking element that is not integer or float
         >>> matrix = [[2, 5, 'a'], [8, 4, 2]]
