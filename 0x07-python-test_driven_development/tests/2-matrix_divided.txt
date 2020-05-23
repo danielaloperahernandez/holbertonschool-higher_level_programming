@@ -94,16 +94,16 @@ Checking matrix is None
 Checking matrix is a list empty
         >>> matrix = []
         >>> matrix_divided(matrix, 5)
-        []
-        >>> matrix
-        []
+        Traceback (most recent call last):
+        ...
+        TypeError: matrix must be a matrix (list of lists) of integers/floats
 
 Checking matrix is a list of lists empty
         >>> matrix = [[]]
         >>> matrix_divided(matrix, 5)
-        [[]]
-        >>> matrix
-        [[]]
+        Traceback (most recent call last):
+        ...
+        TypeError: matrix must be a matrix (list of lists) of integers/floats
 
 Checking matrix without arguments
         >>> matrix_divided()

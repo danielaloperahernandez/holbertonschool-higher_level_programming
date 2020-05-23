@@ -27,12 +27,12 @@ def matrix_divided(matrix, div):
     if div is 0:
         raise ZeroDivisionError("division by zero")
 
-    if type(matrix) is not list:
+    if type(matrix) not in (matrix, list) or len(matrix) == 0:
         raise TypeError(
             "matrix must be a matrix (list of lists) of integers/floats")
     size = None
     for row in matrix:
-        if type(row) is not list:
+        if type(row) not in (row, list) or len(row) == 0:
             raise TypeError(
                 "matrix must be a matrix (list of lists) of integers/floats")
         if size is None:
