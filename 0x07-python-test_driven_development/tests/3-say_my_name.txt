@@ -23,15 +23,25 @@ Cheking lastname is empty string
         >>> say_my_name("James", "")
         My name is James 
 
-Cheking both empty strings
+Cheking both spaces strings
         >>> say_my_name("  ", "  ")
         My name is      
 
-Checking for one argument is number
+Checking both empty strings
+        >>> say_my_name("", "")
+        My name is  
+
+Checking for first argument is number
         >>> say_my_name(67, "Zichy")
         Traceback (most recent call last):
         ...
         TypeError: first_name must be a string
+
+Checking for last argument is number
+        >>> say_my_name("Zichy", 78)
+        Traceback (most recent call last):
+        ...
+        TypeError: last_name must be a string
 
 Checking two arguments are numbers
         >>> say_my_name(67, 101)
