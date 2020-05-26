@@ -49,12 +49,10 @@ class Rectangle:
         return (self.__width * 2) + (self.__height * 2)
 
     def __str__(self):
-        """returns printable string (representation og the rectangle)"""
-        string = ""
-        if self.__width != 0 and self.__height != 0:
-            string += "\n".join("#" * self.__width
-                                for h in range(self.__height))
-        return string
+        """returns printable string (representation og the rectangle)s"""
+        if not self.width or not self.height:
+            return ""
+        return(("#" * self.width + "\n") * self.height)[:-1]
 
     def __repr__(self):
         """return a string representation for reproduction"""
