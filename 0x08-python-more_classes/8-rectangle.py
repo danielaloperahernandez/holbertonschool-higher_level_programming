@@ -14,10 +14,10 @@ class Rectangle:
     def bigger_or_equal(rect_1, rect_2):
         """return the biggest rectangle"""
         if type(rect_1) is not Rectangle:
-            TypeError("rect_1 must be an instance of Rectangle")
+            raise TypeError("rect_1 must be an instance of Rectangle")
         if type(rect_2) is not Rectangle:
-            TypeError("rect_2 must be an instance of Rectangle")
-        if rect_1.area >= rect_2.area:
+            raise TypeError("rect_2 must be an instance of Rectangle")
+        if rect_1.area() >= rect_2.area():
             return rect_1
         return rect_2
 
@@ -53,7 +53,7 @@ class Rectangle:
 
     @height.setter
     def height(self, value):
-        """getter for the private instance attribute height"""
+        """setter for the private instance attribute height"""
         if type(value) is not int:
             raise TypeError("height must be an integer")
         if value < 0:
@@ -62,7 +62,7 @@ class Rectangle:
 
     def area(self):
         """returns the area"""
-        return (self.width * self.height)
+        return (self.__width * self.__height)
 
     def perimeter(self):
         """returns the perimeter"""
