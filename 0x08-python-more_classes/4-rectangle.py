@@ -46,7 +46,7 @@ class Rectangle:
         """returns the perimeter"""
         if self.__width == 0 or self.__height == 0:
             return 0
-        return (self.__width * 2) + (self.__height * 2)
+        return (self.width * 2) + (self.height * 2)
 
     def __str__(self):
         """returns printable string (representation og the rectangle)s"""
@@ -56,4 +56,4 @@ class Rectangle:
 
     def __repr__(self):
         """return a string representation for reproduction"""
-        return "Rectangle ({}, {})".format(self.__width, self.__height)
+        return "Rectangle ({}, {})".format(self.width, self.height)
