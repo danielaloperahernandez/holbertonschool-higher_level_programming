@@ -36,6 +36,10 @@ Checking list with only one element
 		>>> my_test_list.print_sorted()
 		[90]
 
+Checking list with decimals
+		>>> my_test_list.append(3.67, 5,89)
+		>>> my_test_list.print_sorted()
+
 Checking heritage
 		>>> issubclass(type(my_test_list), list)
 		True
