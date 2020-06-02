@@ -21,10 +21,15 @@ Checking empty list case
 		>>> print(my_test_list)
 		[]
 
+Checking list with characters
+		>>> my_test_list = My_list(['m', '98', 'w'])
+		>>> print(my_test_list)
+		['m', '98', 'w']
+
 Checking append element
 		>>> my_test_list.append(67)
 		>>> print(my_test_list)
-		[67]
+		['m', '98', 'w', 67]
 
 Checking negative elements
 		>>> my_test_list = My_list([1, -90, -54, 0])
