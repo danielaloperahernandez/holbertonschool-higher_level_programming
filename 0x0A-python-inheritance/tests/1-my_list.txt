@@ -16,6 +16,12 @@ Checking print_sorted
 		>>> my_test_list.print_sorted()
 		[1, 2, 3, 4, 5]
 
+Checking sorted method with 2 arguments
+		>>> my_test_list.print_sorted([1, 6, 4], 56)
+		Traceback (most recent call last):
+			...
+		TypeError: print_sorted() takes 1 positional argument but 3 were given
+
 Checking empty list case
 		>>> my_test_list = My_list()
 		>>> print(my_test_list)
