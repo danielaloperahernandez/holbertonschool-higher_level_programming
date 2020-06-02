@@ -56,10 +56,15 @@ Checking heritage
 		>>> issubclass(type(my_test_list), list)
 		True
 
+Checking instance test
+		>>> my_test_list = My_list()
+		>>> isinstance(my_test_list, list)
+		True
+
 Adding a sublist
-		>>> my_test_list.append([1, 4])
+		>>> my_test_list = My_list([34, [5, 9, 12]])
 		>>> print(my_test_list)
-		[90, [1, 4]]
+		[34, [5, 9, 12]]
 
 Sorted list with a sublist
 		>>> my_test_list.print_sorted(my_test_list)
