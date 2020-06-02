@@ -31,14 +31,15 @@ Checking negative elements
 		>>> my_test_list.print_sorted()
 		[-90, -54, 0, 1]
 
+Checking list with decimals
+		>>> my_test_list = My_list([9.67, 8.45, 9.32])
+		>>> my_test_list.print_sorted()
+		[8.45, 9.32, 9.67]
+
 Checking list with only one element
 		>>> my_test_list = My_list([90])
 		>>> my_test_list.print_sorted()
 		[90]
-
-Checking list with decimals
-		>>> my_test_list.append(3.67, 5,89)
-		>>> my_test_list.print_sorted()
 
 Checking heritage
 		>>> issubclass(type(my_test_list), list)
