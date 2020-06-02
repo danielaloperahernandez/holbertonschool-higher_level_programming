@@ -1,0 +1,52 @@
+The ``1-my_list`` module
+======================
+
+Using ``print_sorted``
+--------------------
+
+Importing the function from the module:
+        >>> My_list = __import__("1-my_list").MyList
+		>>> my_test_list = My_list([1, 4, 2, 3, 5])
+
+Checking regular case
+        >>> print(my_test_list)
+        [1, 4, 2, 3, 5]
+
+Checking print_sorted
+		>>> my_test_list.print_sorted()
+		[1, 2, 3, 4, 5]
+
+Checking empty list case
+		>>> my_test_list = My_list()
+		>>> print(my_test_list)
+		[]
+
+Checking append element
+		>>> my_test_list.append(67)
+		>>> print(my_test_list)
+		[67]
+
+Checking negative elements
+		>>> my_test_list = My_list([1, -90, -54, 0])
+		>>> my_test_list.print_sorted()
+		[-90, -54, 0, 1]
+
+Checking list with only one element
+		>>> my_test_list = My_list([90])
+		>>> my_test_list.print_sorted()
+		[90]
+
+Checking heritage
+		>>> issubclass(type(my_test_list), list)
+		True
+
+Adding a sublist
+		>>> my_test_list.append([1, 4])
+		>>> print(my_test_list)
+		[90, [1, 4]]
+
+Sorted list with a sublist
+		>>> my_test_list.print_sorted(my_test_list)
+		Traceback (most recent call last):
+			...
+		TypeError: print_sorted() takes 1 positional argument but 2 were given
