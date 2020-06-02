@@ -7,7 +7,7 @@ class Rectangle(BaseGeometry):
     """class Rectangle that inherits from BaseGeometry"""
     def __init__(self, width, height):
         """new instance of Rectangle
-        
+
         Args:
             width: width of a rectangle
             height: height of a rectangle
