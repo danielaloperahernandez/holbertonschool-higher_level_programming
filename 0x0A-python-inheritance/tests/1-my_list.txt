@@ -51,7 +51,7 @@ The ``1-my_list`` module
 	    >>> check_list.print_sorted()
 	    [-98167333, -579999, -3001, -222, -99, 0]
 
-	Original list unchanged:
+	Original list comparition:
 	    >>> check_list = MyList([4, 21, 1, -14, 28, 180, 0])
 	    >>> check_list.print_sorted()
 	    [-14, 0, 1, 4, 21, 28, 180]
