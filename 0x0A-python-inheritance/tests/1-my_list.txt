@@ -69,6 +69,10 @@ Checking list with only one element
 		>>> my_test_list.print_sorted()
 		[90]
 
+Checking class type test:
+		>>> type(my_test_list) == My_list
+		True
+
 Checking heritage
 		>>> issubclass(type(my_test_list), list)
 		True
