@@ -1,96 +1,76 @@
 The ``1-my_list`` module
-======================
+	============================
 
-Using ``1-my_list``
---------------------
+	Using ``1-mylist``
+	---------------------
 
-Importing the function from the module:
-        >>> My_list = __import__("1-my_list").MyList
+	Import function from module:
+	    >>> MyList = __import__('1-my_list').MyList
 
-Checking class type test:
-		>>> my_test_list = My_list([1, 4, 2, 3, 5])
-		>>> type(my_test_list) == My_list
-		True
+	Checking correct Class Type test:
+	    >>> check_list = MyList()
+	    >>> type(check_list) == MyList
+	    True
 
-Checking instance test
-		>>> my_test_list = My_list()
-		>>> isinstance(my_test_list, list)
-		True
+	Checking correct Instance test:
+	    >>> check_list = MyList()
+	    >>> isinstance(check_list, list)
+	    True
 
-Checking print_sorted
-		>>> my_test_list = My_list([1, 4, 2, 3, 5])
-		>>> my_test_list.print_sorted()
-		[1, 2, 3, 4, 5]
+	Checking print_sorted method is an instance method:
+	    >>> type(MyList.__dict__['print_sorted'])
+	    <class 'function'>
 
-Checking regular print
-		>>> my_test_list = My_list([1, 4, 2, 3, 5])
-		>>> print(my_test_list)
-		[1, 4, 2, 3, 5]
+	Checking print_sorted method via class:
+	    >>> check_list.__class__.print_sorted()
+	    Traceback (most recent call last):
+	    TypeError: print_sorted() missing 1 required positional argument: 'self'
 
-Checking sorted method with 1 argument
-		>>> my_test_list.print_sorted([1, 6, 4])
-		Traceback (most recent call last):
-			...
-		TypeError: print_sorted() takes 1 positional argument but 2 were given
+	Checking print_sorted method with 1 arg:
+	    >>> check_list.print_sorted([4, 2, 5])
+	    Traceback (most recent call last):
+	    TypeError: print_sorted() takes 1 positional argument but 2 were given
 
-Checking sorted method with 2 arguments
-		>>> my_test_list.print_sorted([1, 6, 4], 56)
-		Traceback (most recent call last):
-			...
-		TypeError: print_sorted() takes 1 positional argument but 3 were given
+	Checking print_sorted method with 2 args:
+	    >>> check_list.print_sorted([4, 2, 5], 1)
+	    Traceback (most recent call last):
+	    TypeError: print_sorted() takes 1 positional argument but 3 were given
 
-Checking empty list case
-		>>> my_test_list = My_list()
-		>>> print(my_test_list)
-		[]
+	Checking empty list test:
+	    >>> check_list = MyList()
+	    >>> check_list.print_sorted()
+	    []
 
-Checking empty list case
-		>>> my_test_list = My_list()
-		>>> my_test_list.print_sorted()
-		[]
+	Checking normal list test:
+	    >>> check_list = MyList([2, 10, 1])
+	    >>> check_list.print_sorted()
+	    [1, 2, 10]
 
-Checking negative elements
-		>>> my_test_list = My_list([-1, -90000000, -54, 0])
-		>>> my_test_list.print_sorted()
-		[-90000000, -54, -1, 0]
+	Checking normal list2:
+	    >>> check_list = MyList([1, 4, 2, 3, 5])
+	    >>> check_list.print_sorted()
+	    [1, 2, 3, 4, 5]
 
-Checking elements in order
-		>>> my_test_list = My_list([5, 78, 102, 1000])
-		>>> my_test_list.print_sorted()
-		[5, 78, 102, 1000]
+	Negative numbers list test:
+	    >>> check_list = MyList([-1000, -98, -232565, 0, -23423434, -123])
+	    >>> check_list.print_sorted()
+	    [-23423434, -232565, -1000, -123, -98, 0]
 
-Checking reversed order list:
-		>>> my_test_list = My_list([300, 78, 10, 3])
-		>>> my_test_list.print_sorted()
-		[3, 10, 78, 300]
+	Original list unchanged:
+	    >>> check_list = MyList([4, 21, 1, -14, 28, 180, 0])
+	    >>> check_list.print_sorted()
+	    [-14, 0, 1, 4, 21, 28, 180]
+	    >>> check_list
+	    [4, 21, 1, -14, 28, 180, 0]
 
-Checking test append
-		>>> my_test_list.append(89)
-		>>> my_test_list.print_sorted()
-		[3, 10, 78, 89, 300]
+	List already in order:
+	    >>> check_list = MyList([-16, 0, 1, 5, 10, 32, 200])
+	    >>> check_list.print_sorted()
+	    [-16, 0, 1, 5, 10, 32, 200]
 
-Checking list with only one element
-		>>> my_test_list = My_list([90])
-		>>> my_test_list.print_sorted()
-		[90]
+	Test append:
+	    >>> check_list = MyList()
+	    >>> check_list.append(58)
+	    >>> check_list
+	    [58]
 
-Checking instance method:
-		>>> type(My_list.__dict__['print_sorted'])
-		<class 'function'>
-
-Checking method called via class:
-		>>> my_test_list.__class__.print_sorted()
-		Traceback (most recent call last):
-			...
-		TypeError: print_sorted() missing 1 required positional argument: 'self'
-
-Checking heritage
-		>>> issubclass(type(my_test_list), list)
-		True
-
-Sorted list with a sublist
-		>>> my_test_list = My_list([34, [5, 9, 12]])
-		>>> my_test_list.print_sorted(my_test_list)
-		Traceback (most recent call last):
-			...
-		TypeError: print_sorted() takes 1 positional argument but 2 were given
