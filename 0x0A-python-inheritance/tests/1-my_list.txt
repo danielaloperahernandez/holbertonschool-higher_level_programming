@@ -62,6 +62,12 @@ Checking instance method:
 		>>> type(My_list.__dict__['print_sorted'])
 		<class 'function'>
 
+Checking method called via class:
+		>>> my_test_list.__class__.print_sorted()
+		Traceback (most recent call last):
+			...
+		TypeError: print_sorted() missing 1 required positional argument: 'self'
+
 Checking heritage
 		>>> issubclass(type(my_test_list), list)
 		True
