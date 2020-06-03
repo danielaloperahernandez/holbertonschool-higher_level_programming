@@ -35,9 +35,9 @@ Checking empty list case
 		[]
 
 Checking negative elements
-		>>> my_test_list = My_list([-1, -90, -54, 0])
+		>>> my_test_list = My_list([-1, -90000000, -54, 0])
 		>>> my_test_list.print_sorted()
-		[-90, -54, -1, 0]
+		[-90000000, -54, -1, 0]
 
 Checking elements in order
 		>>> my_test_list = My_list([5, 78, 102, 1000])
