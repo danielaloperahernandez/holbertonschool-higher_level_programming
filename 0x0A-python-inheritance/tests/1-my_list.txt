@@ -59,6 +59,11 @@ Checking list with decimals
 		>>> my_test_list.print_sorted()
 		[8.45, 9.32, 9.67]
 
+Checking test append
+		>>> my_test_list.append(89)
+		>>> my_test_list.print_sorted()
+		[8.45, 9.32, 9.67, 89]
+
 Checking list with only one element
 		>>> my_test_list = My_list([90])
 		>>> my_test_list.print_sorted()
