@@ -1,7 +1,9 @@
 #!/usr/bin/python3
-class MyInt(int):
-    """Module for class MyInt"""
+"""Module for class MyInt"""
 
+
+class MyInt(int):
+    """class MyInt swaps == and !="""
     def __eq__(self, other):
         """Swap == with !=
 
