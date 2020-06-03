@@ -44,15 +44,10 @@ Checking elements in order
 		>>> my_test_list.print_sorted()
 		[5, 78, 102, 1000]
 
-Checking list with decimals
-		>>> my_test_list = My_list([9.67, 8.45, 9.32])
-		>>> my_test_list.print_sorted()
-		[8.45, 9.32, 9.67]
-
 Checking test append
 		>>> my_test_list.append(89)
 		>>> my_test_list.print_sorted()
-		[8.45, 9.32, 9.67, 89]
+		[5, 78, 89, 102, 1000]
 
 Checking list with only one element
 		>>> my_test_list = My_list([90])
