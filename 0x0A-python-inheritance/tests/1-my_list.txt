@@ -22,6 +22,12 @@ Checking list with bool
 		>>> my_test_list.print_sorted()
 		[False, True]
 
+Checking sorted method with 1 argument
+		>>> my_test_list.print_sorted([1, 6, 4])
+		Traceback (most recent call last):
+			...
+		TypeError: print_sorted() takes 1 positional argument but 2 were given
+
 Checking sorted method with 2 arguments
 		>>> my_test_list.print_sorted([1, 6, 4], 56)
 		Traceback (most recent call last):
