@@ -59,16 +59,20 @@ Checking elements in order
 		>>> my_test_list.print_sorted()
 		[5, 78, 102, 1000]
 
+Checking reversed order list:
+		>>> my_test_list = My_list([300, 78, 10, 3])
+		>>> my_test_list.print_sorted()
+		[3, 10, 78, 300]
+
 Checking test append
 		>>> my_test_list.append(89)
 		>>> my_test_list.print_sorted()
-		[5, 78, 89, 102, 1000]
+		[3, 10, 78, 89, 300]
 
 Checking list with only one element
 		>>> my_test_list = My_list([90])
 		>>> my_test_list.print_sorted()
 		[90]
-
 
 Checking instance method:
 		>>> type(My_list.__dict__['print_sorted'])
