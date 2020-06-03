@@ -6,7 +6,7 @@ class MyInt(int):
         """Swap == with !=
 
         Args:
-            value: object to compare
+            other: object to compare
 
         Returns: True if value and self are differents
                 False in otherwise
@@ -15,8 +15,9 @@ class MyInt(int):
 
     def __ne__(self, other):
         """Swap != with ==
+
         Args:
-            value: object to compare
+            other: object to compare
 
         Returns: False if value and self are iqual
                 True in otherwise
