@@ -68,6 +68,10 @@ Checking class type test:
 		>>> type(my_test_list) == My_list
 		True
 
+Checking instance method:
+		>>> type(My_list.__dict__['print_sorted'])
+		<class 'function'>
+
 Checking heritage
 		>>> issubclass(type(my_test_list), list)
 		True
