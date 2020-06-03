@@ -12,6 +12,11 @@ Checking print_sorted
 		>>> my_test_list.print_sorted()
 		[1, 2, 3, 4, 5]
 
+Checking regular print
+		>>> my_test_list = My_list([1, 4, 2, 3, 5])
+		>>> print(my_test_list)
+		[1, 4, 2, 3, 5]
+
 Checking list with bool
 		>>> my_test_list = My_list([False, True])
 		>>> my_test_list.print_sorted()
