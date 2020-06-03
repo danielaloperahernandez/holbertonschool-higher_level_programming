@@ -2,7 +2,7 @@
 class MyInt(int):
     """Module for class MyInt"""
 
-    def __eq__(self, value):
+    def __eq__(self, other):
         """Swap == with !=
 
         Args:
@@ -11,9 +11,9 @@ class MyInt(int):
         Returns: True if value and self are differents
                 False in otherwise
         """
-        return super().__ne__(value)
+        return super().__ne__(other)
 
-    def __ne__(self, value):
+    def __ne__(self, other):
         """Swap != with ==
         Args:
             value: object to compare
@@ -21,4 +21,4 @@ class MyInt(int):
         Returns: False if value and self are iqual
                 True in otherwise
         """
-        return super().__eq__(value)
+        return super().__eq__(other)
