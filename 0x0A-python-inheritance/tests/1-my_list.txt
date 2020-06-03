@@ -83,9 +83,3 @@ Sorted list with a sublist
 		Traceback (most recent call last):
 			...
 		TypeError: print_sorted() takes 1 positional argument but 2 were given
-
-Every TypeError
-		>>> my_test_list.print_sorted() #doctest: +IGNORE_EXCEPTION_DETAIL
-		Traceback (most recent call last):
-			...
-		TypeError:
