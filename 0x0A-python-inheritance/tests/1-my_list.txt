@@ -27,12 +27,12 @@ The ``1-my_list`` module
 	    TypeError: print_sorted() missing 1 required positional argument: 'self'
 
 	Checking print_sorted method with 1 arg:
-	    >>> check_list.print_sorted([4, 2, 5])
+	    >>> check_list.print_sorted([67, 0, 121])
 	    Traceback (most recent call last):
 	    TypeError: print_sorted() takes 1 positional argument but 2 were given
 
 	Checking print_sorted method with 2 args:
-	    >>> check_list.print_sorted([4, 2, 5], 1)
+	    >>> check_list.print_sorted([12, 32, 78], 1)
 	    Traceback (most recent call last):
 	    TypeError: print_sorted() takes 1 positional argument but 3 were given
 
@@ -42,9 +42,9 @@ The ``1-my_list`` module
 	    []
 
 	Checking normal list test:
-	    >>> check_list = MyList([2, 10, 1])
+	    >>> check_list = MyList([3, 22, 1])
 	    >>> check_list.print_sorted()
-	    [1, 2, 10]
+	    [1, 3, 22]
 
 	Checking normal list2:
 	    >>> check_list = MyList([1, 4, 2, 3, 5])
@@ -52,9 +52,9 @@ The ``1-my_list`` module
 	    [1, 2, 3, 4, 5]
 
 	Negative numbers list test:
-	    >>> check_list = MyList([-1000, -98, -232565, 0, -23423434, -123])
+	    >>> check_list = MyList([-3001, -99, -579999, 0, -98167333, -222])
 	    >>> check_list.print_sorted()
-	    [-23423434, -232565, -1000, -123, -98, 0]
+	    [-98167333, -579999, -3001, -222, -99, 0]
 
 	Original list unchanged:
 	    >>> check_list = MyList([4, 21, 1, -14, 28, 180, 0])
