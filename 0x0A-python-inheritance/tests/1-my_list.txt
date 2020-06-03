@@ -34,11 +34,6 @@ Checking empty list case
 		>>> my_test_list.print_sorted()
 		[]
 
-Checking list with characters
-		>>> my_test_list = My_list(['m', '98', 'w'])
-		>>> my_test_list.print_sorted()
-		['98', 'm', 'w']
-
 Checking negative elements
 		>>> my_test_list = My_list([1, -90, -54, 0])
 		>>> my_test_list.print_sorted()
