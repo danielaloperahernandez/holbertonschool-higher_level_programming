@@ -41,6 +41,11 @@ Checking sorted method with 2 arguments
 
 Checking empty list case
 		>>> my_test_list = My_list()
+		>>> print(my_test_list)
+		[]
+
+Checking empty list case
+		>>> my_test_list = My_list()
 		>>> my_test_list.print_sorted()
 		[]
 
