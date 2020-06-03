@@ -16,6 +16,11 @@ Checking print_sorted
 		>>> my_test_list.print_sorted()
 		[1, 2, 3, 4, 5]
 
+Checking list with bool
+		>>> my_test_list = My_list([False, True])
+		>>> print(my_test_list)
+		[False, True]
+
 Checking sorted method with 2 arguments
 		>>> my_test_list.print_sorted([1, 6, 4], 56)
 		Traceback (most recent call last):
@@ -24,18 +29,13 @@ Checking sorted method with 2 arguments
 
 Checking empty list case
 		>>> my_test_list = My_list()
-		>>> print(my_test_list)
+		>>> my_test_list.print_sorted()
 		[]
 
 Checking list with characters
 		>>> my_test_list = My_list(['m', '98', 'w'])
-		>>> print(my_test_list)
-		['m', '98', 'w']
-
-Checking append element
-		>>> my_test_list.append(67)
-		>>> print(my_test_list)
-		['m', '98', 'w', 67]
+		>>> my_test_list.print_sorted()
+		['98', 'm', 'w']
 
 Checking negative elements
 		>>> my_test_list = My_list([1, -90, -54, 0])
