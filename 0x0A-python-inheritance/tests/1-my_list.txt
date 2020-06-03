@@ -7,6 +7,16 @@ Using ``1-my_list``
 Importing the function from the module:
         >>> My_list = __import__("1-my_list").MyList
 
+Checking class type test:
+		>>> my_test_list = My_list([1, 4, 2, 3, 5])
+		>>> type(my_test_list) == My_list
+		True
+
+Checking instance test
+		>>> my_test_list = My_list()
+		>>> isinstance(my_test_list, list)
+		True
+
 Checking print_sorted
 		>>> my_test_list = My_list([1, 4, 2, 3, 5])
 		>>> my_test_list.print_sorted()
@@ -54,9 +64,6 @@ Checking list with only one element
 		>>> my_test_list.print_sorted()
 		[90]
 
-Checking class type test:
-		>>> type(my_test_list) == My_list
-		True
 
 Checking instance method:
 		>>> type(My_list.__dict__['print_sorted'])
@@ -70,11 +77,6 @@ Checking method called via class:
 
 Checking heritage
 		>>> issubclass(type(my_test_list), list)
-		True
-
-Checking instance test
-		>>> my_test_list = My_list()
-		>>> isinstance(my_test_list, list)
 		True
 
 Sorted list with a sublist
