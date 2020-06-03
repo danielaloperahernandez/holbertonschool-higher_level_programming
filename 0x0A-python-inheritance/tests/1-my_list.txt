@@ -6,13 +6,9 @@ Using ``print_sorted``
 
 Importing the function from the module:
         >>> My_list = __import__("1-my_list").MyList
-		>>> my_test_list = My_list([1, 4, 2, 3, 5])
-
-Checking regular case
-        >>> print(my_test_list)
-        [1, 4, 2, 3, 5]
 
 Checking print_sorted
+		>>> my_test_list = My_list([1, 4, 2, 3, 5])
 		>>> my_test_list.print_sorted()
 		[1, 2, 3, 4, 5]
 
@@ -72,3 +68,9 @@ Sorted list with a sublist
 		Traceback (most recent call last):
 			...
 		TypeError: print_sorted() takes 1 positional argument but 2 were given
+
+Every TypeError
+		>>> my_test_list.print_sorted() #doctest: +IGNORE_EXCEPTION_DETAIL
+		Traceback (most recent call last):
+			...
+		TypeError:
