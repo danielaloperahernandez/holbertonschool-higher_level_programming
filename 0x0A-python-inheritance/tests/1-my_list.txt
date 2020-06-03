@@ -31,11 +31,6 @@ The ``1-my_list`` module
 	    Traceback (most recent call last):
 	    TypeError: print_sorted() takes 1 positional argument but 2 were given
 
-	Checking print_sorted method with 2 args:
-	    >>> check_list.print_sorted([12, 32, 78], 1)
-	    Traceback (most recent call last):
-	    TypeError: print_sorted() takes 1 positional argument but 3 were given
-
 	Checking empty list test:
 	    >>> check_list = MyList()
 	    >>> check_list.print_sorted()
