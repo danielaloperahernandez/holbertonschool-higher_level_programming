@@ -8,7 +8,10 @@ def pascal_triangle(n):
     after each line containing a specific string
     """
     if n <= 0:
-        return []
+        return [[]]
+
+    if n == 1:
+        return [[1]]
 
     list_pascal = [[1], [1, 1]]
 
