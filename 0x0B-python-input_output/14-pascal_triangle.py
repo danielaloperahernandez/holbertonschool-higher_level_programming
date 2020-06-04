@@ -1,5 +1,12 @@
 #!/usr/bin/python3
+"""Module for pascal_triangule method"""
+
+
 def pascal_triangle(n):
+    """
+    Method that inserts a line of text to a file,
+    after each line containing a specific string
+    """
     list_pascal = [[1], [1, 1]]
 
     for row in range(1, n-1):
