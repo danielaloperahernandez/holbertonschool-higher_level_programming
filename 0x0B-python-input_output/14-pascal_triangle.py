@@ -7,6 +7,9 @@ def pascal_triangle(n):
     Method that inserts a line of text to a file,
     after each line containing a specific string
     """
+    if n <= 0:
+        return []
+
     list_pascal = [[1], [1, 1]]
 
     for row in range(1, n-1):
