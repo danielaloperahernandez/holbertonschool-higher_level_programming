@@ -77,16 +77,16 @@ class Base:
     @classmethod
     def load_from_file_csv(cls):
         """Loads file containing csv representation"""
+        list_objs = []
         with open("{}.csv".format(cls.__name__), 'r') as file_csv:
             if cls.__name__ == "Rectangle":
                 fields = ['id', 'width', 'height', 'x', 'y']
             elif cls.__name__ == "Square":
                 fields = ['id', 'size', 'x', 'y']
-            reader = csv.DictReader(file_csv)
+            reader = csv.DictReader(file_csv, fieldnames=fields)
             list_objs = []
             for row in reader:
                 for key in row:
                     row[key] = int(row[key])
                 list_objs.append(cls.create(**row))
-            return list_objs
-
+        return list_objs
