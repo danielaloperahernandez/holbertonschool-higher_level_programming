@@ -35,6 +35,10 @@ class TestBase(unittest.TestCase):
         self.assertIsNotNone(Base.save_to_file.__doc__)
         self.assertIs(hasattr(Base, "load_from_file"), True)
         self.assertIsNotNone(Base.load_from_file.__doc__)
+        self.assertIs(hasattr(Base, "save_to_file_csv"), True)
+        self.assertIsNotNone(Base.save_to_file.__doc__)
+        self.assertIs(hasattr(Base, "load_from_file_csv"), True)
+        self.assertIsNotNone(Base.load_from_file.__doc__)
 
 # ---------------Tests: task 1 --------------------------------
     def test_nb_is_private(self):

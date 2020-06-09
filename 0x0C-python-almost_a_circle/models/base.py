@@ -62,6 +62,7 @@ class Base:
 
     @classmethod
     def save_to_file_csv(cls, list_objs):
+        """Converts 'list_objs' to csv format"""
         if not list_objs:
             list_objs = []
         with open("{}.csv".format(cls.__name__), 'w') as file_csv:
@@ -75,6 +76,7 @@ class Base:
 
     @classmethod
     def load_from_file_csv(cls):
+        """Loads file containing csv representation"""
         with open("{}.csv".format(cls.__name__), 'r') as file_csv:
             if cls.__name__ == "Rectangle":
                 fields = ['id', 'width', 'height', 'x', 'y']
@@ -87,3 +89,4 @@ class Base:
                     row[key] = int(row[key])
                 list_objs.append(cls.create(**row))
             return list_objs
+
