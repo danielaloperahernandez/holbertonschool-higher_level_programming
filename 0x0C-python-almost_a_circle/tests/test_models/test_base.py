@@ -45,7 +45,7 @@ class TestBase(unittest.TestCase):
         with self.assertRaises(TypeError) as e:
             Base.__init__(self, 1, 2)
         msg = "__init__() takes from 1 to 2 positional arguments but 3 \
-    were given"
+were given"
         self.assertEqual(str(e.exception), msg)
 
     def test_E_consecutive_ids(self):
