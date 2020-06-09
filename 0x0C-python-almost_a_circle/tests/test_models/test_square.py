@@ -545,3 +545,6 @@ positional argument: 'self'"
         Square_test1.update(5, 7, 9, 56)
         dic = {'x': 9, 'y': 56, 'size': 7, 'id': 5}
         self.assertEqual(Square_test1.to_dictionary(), dic)
+
+if __name__ == "__main__":
+    unittest.main()

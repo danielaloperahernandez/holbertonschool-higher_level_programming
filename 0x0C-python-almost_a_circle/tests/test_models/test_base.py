@@ -287,3 +287,6 @@ but 3 were given"
         self.assertNotEqual(id(list_input[0]), id(list_output[0]))
         self.assertEqual(str(list_input[1]), str(list_output[1]))
         self.assertNotEqual(id(list_input[1]), id(list_output[1]))
+
+if __name__ == "__main__":
+    unittest.main()
