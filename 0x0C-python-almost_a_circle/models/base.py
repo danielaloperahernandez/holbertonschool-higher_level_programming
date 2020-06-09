@@ -58,7 +58,7 @@ class Base:
         file_load = "{}.json".format(cls.__name__)
         if not path.isfile(file_load):
             return []
-        with open(file_load, "r") as f:
+        with open(file_load, "r", encoding="utf-8") as f:
             return[cls.create(**dic) for dic in cls.from_json_string(f.read())]
 
     @classmethod
@@ -66,12 +66,12 @@ class Base:
         """Converts 'list_objs' to csv format"""
         if not list_objs:
             list_objs = []
-        with open("{}.csv".format(cls.__name__), 'w') as file_csv:
+        with open("{}.csv".format(cls.__name__), 'w', encoding="utf-8") as fil:
             if cls.__name__ == "Rectangle":
                 fields = ['id', 'width', 'height', 'x', 'y']
             elif cls.__name__ == "Square":
                 fields = ['id', 'size', 'x', 'y']
-            writer = csv.DictWriter(file_csv, fieldnames=fields)
+            writer = csv.DictWriter(fil, fieldnames=fields)
             for obj in list_objs:
                 writer.writerow(obj.to_dictionary())
 
