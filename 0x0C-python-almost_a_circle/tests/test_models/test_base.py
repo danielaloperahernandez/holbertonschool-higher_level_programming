@@ -120,104 +120,102 @@ but 3 were given"
 'list_dictionaries'"
         self.assertEqual(str(excep.exception), message)
 
-        self.assertEqual(Base.to_json_string(None), "[]")
         self.assertEqual(Base.to_json_string([]), "[]")
-        d = [{'x': 101, 'y': 20123, 'width': 312321, 'id': 522244,
-              'height': 34340}]
-        self.assertEqual(len(Base.to_json_string(d)),
-                         len(str(d)))
-        d = [{'x': 1, 'y': 2, 'width': 3, 'id': 4, 'height': 5}]
-        self.assertEqual(len(Base.to_json_string(d)),
-                         len(str(d)))
-        d = [{"foobarrooo": 989898}]
-        self.assertEqual(Base.to_json_string(d),
-                         '[{"foobarrooo": 989898}]')
+        self.assertEqual(Base.to_json_string(None), "[]")
+        dic = [{}]
+        self.assertEqual(Base.to_json_string(dic), '[{}]')
+        dic = [{}, {}, {}]
+        self.assertEqual(Base.to_json_string(dic), '[{}, {}, {}]')
 
-        d = [{"foobarrooo": 989898}, {"abc": 123}, {"HI": 0}]
-        self.assertEqual(Base.to_json_string(d),
-                         '[{"foobarrooo": 989898}, {"abc": 123}, {"HI": 0}]')
+        dic = [{'width': 657, 'height': 78, 'x': 543, 'y': 965, 'id': 345}]
+        self.assertEqual(len(Base.to_json_string(dic)), len(str(dic)))
 
-        d = [{'x': 1, 'y': 2, 'width': 3, 'id': 4, 'height': 5},
-             {'x': 101, 'y': 20123, 'width': 312321, 'id': 522244,
-              'height': 34340}]
-        self.assertEqual(len(Base.to_json_string(d)),
-                         len(str(d)))
-        d = [{}]
-        self.assertEqual(Base.to_json_string(d),
-                         '[{}]')
-        d = [{}, {}]
-        self.assertEqual(Base.to_json_string(d),
-                         '[{}, {}]')
+        dic = [{'width': 65, 'height': 8, 'x': 3, 'y': 5, 'id': 34},
+               {'width': 5, 'height': 1, 'x': 2, 'y': 6, 'id': 75}]
+        self.assertEqual(len(Base.to_json_string(dic)), len(str(dic)))
 
-        r1 = Rectangle(10, 7, 2, 8)
-        dictionary = r1.to_dictionary()
-        json_dictionary = Base.to_json_string([dictionary])
-        dictionary = str([dictionary])
-        dictionary = dictionary.replace("'", '"')
-        self.assertEqual(dictionary, json_dictionary)
+        dic = [{'th': 7}, {'holberton': 3}]
+        dic_json = '[{"th": 7}, {"holberton": 3}]'
+        self.assertEqual(Base.to_json_string(dic), dic_json)
 
-        r1 = Rectangle(10, 7, 2, 8)
-        r2 = Rectangle(1, 2, 3, 4)
-        r3 = Rectangle(2, 3, 4, 5)
-        dictionary = [r1.to_dictionary(), r2.to_dictionary(),
-                      r3.to_dictionary()]
-        json_dictionary = Base.to_json_string(dictionary)
-        dictionary = str(dictionary)
-        dictionary = dictionary.replace("'", '"')
-        self.assertEqual(dictionary, json_dictionary)
+        dic = [{'help': 7}]
+        dic_json = '[{"help": 7}]'
+        self.assertEqual(Base.to_json_string(dic), dic_json)
 
-        r1 = Square(10, 7, 2)
-        dictionary = r1.to_dictionary()
-        json_dictionary = Base.to_json_string([dictionary])
-        dictionary = str([dictionary])
-        dictionary = dictionary.replace("'", '"')
-        self.assertEqual(dictionary, json_dictionary)
+        Rect_test = Rectangle(9, 54, 3, 1)
+        dic = Rect_test.to_dictionary()
+        json_dic = Base.to_json_string([dic])
+        dic = str([dic])
+        dic = dic.replace("'", '"')
+        self.assertEqual(dic, json_dic)
 
-        r1 = Square(10, 7, 2)
-        r2 = Square(1, 2, 3)
-        r3 = Square(2, 3, 4)
-        dictionary = [r1.to_dictionary(), r2.to_dictionary(),
-                      r3.to_dictionary()]
-        json_dictionary = Base.to_json_string(dictionary)
-        dictionary = str(dictionary)
-        dictionary = dictionary.replace("'", '"')
+        Rect_test1 = Rectangle(5, 6, 2, 9)
+        Rect_test2 = Rectangle(78, 16, 9, 1)
+        dic = [Rect_test1.to_dictionary(), Rect_test2.to_dictionary()]
+        json_dic = Base.to_json_string([dic])
+        dic = str([dic])
+        dic = dic.replace("'", '"')
+        self.assertEqual(dic, json_dic)
+
+        Square_test = Square(54, 3, 1)
+        dic = Square_test.to_dictionary()
+        json_dic = Base.to_json_string([dic])
+        dic = str([dic])
+        dic = dic.replace("'", '"')
+        self.assertEqual(dic, json_dic)
+
+        Square_test1 = Square(5, 2, 9)
+        Square_test2 = Square(16, 9, 1)
+        dic = [Square_test1.to_dictionary(), Square_test2.to_dictionary()]
+        json_dic = Base.to_json_string([dic])
+        dic = str([dic])
+        dic = dic.replace("'", '"')
+        self.assertEqual(dic, json_dic)
 
 # ---------------Tests: task 16 --------------------------------
     def test_save_to_file(self):
-        """Test test_save_to_file method"""
-        Rect_test1 = Rectangle(12, 5)
-        Rectangle.save_to_file([Rect_test1])
+        '''Tests save_to_file() method.'''
+        import os
+        r1 = Rectangle(10, 7, 2, 8)
+        r2 = Rectangle(2, 4)
+        Rectangle.save_to_file([r1, r2])
 
-        with open("Rectangle.json", "r") as file_test:
-            self.assertEqual(len(file_test.read()), 53)
-
-        Rect_test1 = Rectangle(8, 6)
-        Rect_test2 = Rectangle(7, 8, 1)
-        Rectangle.save_to_file([Rect_test1, Rect_test2])
-
-        with open("Rectangle.json", "r") as file_test:
-            self.assertEqual(len(file_test.read()), 104)
+        with open("Rectangle.json", "r") as file:
+            self.assertEqual(len(file.read()), 105)
 
         Rectangle.save_to_file(None)
-        with open("Rectangle.json", "r") as file_test:
-            self.assertEqual(file_test.read(), "[]")
+        with open("Rectangle.json", "r") as file:
+            self.assertEqual(file.read(), "[]")
 
+        try:
+            os.remove("Rectangle.json")
+        except:
+            pass
         Rectangle.save_to_file([])
-        with open("Rectangle.json", "r") as file_test:
-            self.assertEqual(file_test.read(), "[]")
+        with open("Rectangle.json", "r") as file:
+            self.assertEqual(file.read(), "[]")
 
-        os.remove("Rectangle.json")
+        r2 = Rectangle(2, 4)
+        Rectangle.save_to_file([r2])
+        with open("Rectangle.json", "r") as file:
+            self.assertEqual(len(file.read()), 52)
 
+        Square.save_to_file(None)
+        with open("Square.json", "r") as file:
+            self.assertEqual(file.read(), "[]")
+
+        try:
+            os.remove("Square.json")
+        except:
+            pass
         Square.save_to_file([])
-        with open("Square.json", "r") as file_test:
-            self.assertEqual(file_test.read(), "[]")
+        with open("Square.json", "r") as file:
+            self.assertEqual(file.read(), "[]")
 
-        Square_test = Square(8)
-        Square.save_to_file([Square_test])
-        with open("Square.json", "r") as file_test:
-            self.assertEqual(len(file_test.read()), 38)
-
-        os.remove("Square.json")
+        r2 = Square(1)
+        Square.save_to_file([r2])
+        with open("Square.json", "r") as file:
+            self.assertEqual(len(file.read()), 38)
 
 # ---------------Tests: task 17 --------------------------------
     def test_from_json_string(self):
