@@ -87,6 +87,7 @@ but 3 were given"
         """Test synchronous between instance and class id"""
         Btest = Base()
         self.assertEqual(getattr(Base, "_Base__nb_objects"), Btest.id)
+        Btest = Base()
         Btest = Base("betty")
         Btest = Base(56)
         Btest = Base()
@@ -97,6 +98,12 @@ but 3 were given"
         num = 56
         Btest = Base(num)
         self.assertEqual(Btest.id, num)
+
+    def test_int_variable(self):
+        """Test id dependent on a variable"""
+        string = "holberton"
+        Btest = Base(string)
+        self.assertEqual(Btest.id, string)
 
     def test_key_word(self):
         """Test id dependent on a variable (with tag)"""
