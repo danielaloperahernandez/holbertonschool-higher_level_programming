@@ -7,4 +7,3 @@ SELECT tv_shows.title AS title
        ON tv_genres.id = tv_show_genres.show_id
        WHERE tv_genres.name = "Comedy"
        ORDER BY title ASC;
-
