@@ -12,7 +12,8 @@ class State(Base):
     """Class representing the states table"""
     __tablename__ = 'states'
 
-    id = Column(Integer, nullable=False, primary_key=True, autoincrement=True)
+    id = Column(Integer, nullable=False, primary_key=True,
+                autoincrement=True, unique=True)
     name = Column(String(128), nullable=False)
 
     cities = relationship("City", backref="cities")
