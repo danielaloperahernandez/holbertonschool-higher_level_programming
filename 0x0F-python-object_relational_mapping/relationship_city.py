@@ -4,6 +4,8 @@
 from sqlalchemy import Column, Integer, String, ForeignKey
 from relationship_state import Base
 
+Base = declarative_base()
+
 class City(Base):
     """Class representing the states table"""
     __tablename__ = 'cities'
