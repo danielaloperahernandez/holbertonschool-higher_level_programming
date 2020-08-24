@@ -6,8 +6,8 @@ import urllib.error
 try:
     with urllib.request.urlopen("https://intranet.hbtn.io/status") as response:
         req = response.read()
-        print("Body response:\n\t- type: {}\n\t- content: {}\n\t\
-              - utf8 content: {}"
+        print("Body response:\n\t- type: {}"
+              "\n\t- content: {}\n\t- utf8 content: {}"
               .format(type(req), req, req.decode('utf-8')))
 except urllib.error.URLError as e:
     print(e)
