@@ -1,6 +1,6 @@
 #!/usr/bin/node
 exports.callMeMoby = function (n, fun) {
-  while ((n-- > 0)) {
+  while (n-- > 0) {
     fun();
   }
 };
