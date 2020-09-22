@@ -4,4 +4,7 @@ const fs = require('fs');
 
 request
   .get(process.argv[2])
-  .pipe(fs.createWriteStream(process.argv[3]))
+  .on('error', function (err) {
+    console.log(err);
+  })
+  .pipe(fs.createWriteStream(process.argv[3]));
